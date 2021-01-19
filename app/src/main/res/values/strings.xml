@@ -1,3 +1,12 @@
 <resources>
   <string name="app_name">gif-daily</string>
+    <string name="log_in_or_sign_up">Log In or Sign Up</string>
+    <string name="hint_user_name">Username</string>
+  <string name="hint_password">Password</string>
+  <string name="hint_email">Email address</string>
+    <string name="forgot_your_password">Forgot Your Password?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_with_facebook">Sign Up Using Facebook</string>
+    <string name="sign_up_with_google">Sign Up Using Google</string>
+    <string name="log_in">Log In</string>
 </resources>
