@@ -61,3 +61,8 @@ object Room {
     const val ktx = "androidx.room:room-ktx:2.2.6"
     const val runtime = "androidx.room:room-runtime:2.2.6"
 }
+
+object Navigation {
+    const val navFragment = "androidx.navigation:navigation-fragment-ktx:2.3.2"
+    const val navUI = "androidx.navigation:navigation-ui-ktx:2.3.2"
+}

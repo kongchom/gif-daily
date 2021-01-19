@@ -4,6 +4,7 @@ buildscript {
     google()
     jcenter()
     maven("https://plugins.gradle.org/m2/")
+    mavenCentral()
   }
   dependencies {
     classpath(dev.kaycee.buildsrc.Dependencies.gradle)
@@ -20,6 +21,7 @@ allprojects {
   repositories {
     google()
     jcenter()
+    mavenCentral()
   }
 }
 

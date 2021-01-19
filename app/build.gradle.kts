@@ -108,6 +108,10 @@ dependencies {
   kapt(dev.kaycee.buildsrc.Hilt.daggerCompiler)
   kapt(dev.kaycee.buildsrc.Hilt.hiltCompiler)
 
+  // Navigation
+  implementation(dev.kaycee.buildsrc.Navigation.navFragment)
+  implementation(dev.kaycee.buildsrc.Navigation.navUI)
+
   // Testing
   testImplementation(dev.kaycee.buildsrc.Testing.core)
   testImplementation(dev.kaycee.buildsrc.Testing.coroutines)
