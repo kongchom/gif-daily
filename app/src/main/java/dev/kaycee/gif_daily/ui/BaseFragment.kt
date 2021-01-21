@@ -11,8 +11,8 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<VB: ViewBinding, VM: ViewModel>: Fragment() {
 
-    protected lateinit var binding: ViewBinding
-    protected val viewModel: ViewModel by lazy { ViewModelProvider(this).get(getViewModelClass()) }
+    protected lateinit var binding: VB
+    protected val viewModel: VM by lazy { ViewModelProvider(this).get(getViewModelClass()) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,6 +22,13 @@ abstract class BaseFragment<VB: ViewBinding, VM: ViewModel>: Fragment() {
         binding = getViewBinding(inflater, container)
         return binding.root
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        onCreateView(savedInstanceState)
+    }
+
+    protected abstract fun onCreateView(instance: Bundle?)
 
     protected abstract fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB
 

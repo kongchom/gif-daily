@@ -9,4 +9,6 @@
     <string name="sign_up_with_facebook">Sign Up Using Facebook</string>
     <string name="sign_up_with_google">Sign Up Using Google</string>
     <string name="log_in">Log In</string>
+    <string name="invalid_user">Invalid user</string>
+  <string name="invalid_password">Invalid password</string>
 </resources>
