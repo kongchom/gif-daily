@@ -1,6 +1,6 @@
 <resources>
   <string name="app_name">gif-daily</string>
-    <string name="log_in_or_sign_up">Log In or Sign Up</string>
+    <string name="option_log_in">Log In</string>
     <string name="hint_user_name">Username</string>
   <string name="hint_password">Password</string>
   <string name="hint_email">Email address</string>
@@ -11,4 +11,7 @@
     <string name="log_in">Log In</string>
     <string name="invalid_user">Invalid user</string>
   <string name="invalid_password">Invalid password</string>
+    <string name="invalid_email">Invalid email</string>
+  <string name="or">Or</string>
+    <string name="gif_daily">Gif-Daily</string>
 </resources>

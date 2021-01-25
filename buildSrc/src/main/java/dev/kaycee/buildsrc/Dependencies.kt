@@ -19,6 +19,8 @@ object Dependencies {
     const val materialDesign = "com.google.android.material:material:1.2.0"
     const val materialDialog = "com.shreyaspatil:MaterialDialog:2.1"
     const val coil = "io.coil-kt:coil:1.0.0"
+    const val glide = "com.github.bumptech.glide:glide:4.11.0"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:4.11.0"
 }
 
 object Lifecycle {

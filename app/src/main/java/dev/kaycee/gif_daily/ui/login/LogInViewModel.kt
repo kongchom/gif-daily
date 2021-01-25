@@ -8,21 +8,30 @@ import androidx.lifecycle.ViewModel
 
 class LogInViewModel @ViewModelInject constructor(
 
-): ViewModel() {
+) : ViewModel() {
 
     var isValidUserName: Boolean = false
     var isValidPassword: Boolean = false
+    var isValidEmail: Boolean = false
 
     val _userName = MutableLiveData<String>()
     val userName: LiveData<String>
-    get() = _userName
+        get() = _userName
 
     val _password = MutableLiveData<String>()
     val password: LiveData<String>
-    get() = _password
+        get() = _password
+
+    val _email = MutableLiveData<String>()
+    val email: LiveData<String>
+        get() = _email
+
+    val _isLogIn = MutableLiveData(true)
+    val isLogIn: LiveData<Boolean>
+    get() = _isLogIn
 
     fun validateUsername(username: String) {
-        isValidUserName =  isLengthValidCharactersValid(username)
+        isValidUserName = isLengthValidCharactersValid(username)
                 && isSatisfyOtherRequirements(username)
         _userName.postValue(username)
     }
@@ -32,8 +41,13 @@ class LogInViewModel @ViewModelInject constructor(
         _password.postValue(password)
     }
 
-    fun showUsernameInvalidError() {
+    fun validateEmail(email: String) {
+        isValidEmail = isValidEmail(email)
+        _email.postValue(email)
+    }
 
+    fun enableLogInMode(isLogIn: Boolean) {
+        _isLogIn.value = isLogIn
     }
 
     /**
@@ -54,7 +68,7 @@ class LogInViewModel @ViewModelInject constructor(
 
     private fun isLengthValidCharactersValid(username: String): Boolean {
         val regexString = "^[a-zA-Z0-9][a-zA-Z0-9_]{4,15}+$"
-        Log.d("congnm",Regex(regexString).matches(username).toString())
+        Log.d("congnm", Regex(regexString).matches(username).toString())
         return Regex(regexString).matches(username)
     }
 
@@ -65,5 +79,15 @@ class LogInViewModel @ViewModelInject constructor(
     private fun isValidPassword(pw: String): Boolean {
         val regexString = "^(?=.*[A-Za-z])(?=.*\\d).{8,}\$"
         return Regex(regexString).matches(pw)
+    }
+
+    /**
+     * Check
+     */
+
+    private fun isValidEmail(email: String): Boolean {
+        val regexString =
+            "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})\$"
+        return Regex(regexString).matches(email)
     }
 }

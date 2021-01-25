@@ -122,6 +122,10 @@ dependencies {
   // Android Testing
   androidTestImplementation(dev.kaycee.buildsrc.Testing.extJUnit)
   androidTestImplementation(dev.kaycee.buildsrc.Testing.espresso)
+
+  //Glide
+  implementation(dev.kaycee.buildsrc.Dependencies.glide)
+  kapt(dev.kaycee.buildsrc.Dependencies.glideCompiler)
 }
 
 ktlint {
