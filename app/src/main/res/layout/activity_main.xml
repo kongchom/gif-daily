@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange_f2af58"
+    tools:context=".MainActivity">
 
 
     <fragment
         android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/navigation"/>
+        app:navGraph="@navigation/navigation" />
 
     <ImageView
+        android:id="@+id/btnHome"
         android:layout_width="@dimen/dp50"
         android:layout_height="@dimen/dp50"
         android:layout_marginBottom="@dimen/dp32"
@@ -26,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/btnRegister"
         android:layout_width="@dimen/dp50"
         android:layout_height="@dimen/dp50"
         android:layout_marginStart="@dimen/dp48"

@@ -2,6 +2,7 @@ package dev.kaycee.gif_daily.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import dev.kaycee.gif_daily.model.TrendingGif
 import kotlinx.coroutines.flow.Flow
@@ -12,6 +13,6 @@ interface GifDao {
     @Query("SELECT * FROM gif_database")
     fun getAllTrendingGif(): Flow<List<TrendingGif>>
 
-    @Insert
-    fun insertGif(trendingGif: TrendingGif)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun addGifList(trendingGif: List<TrendingGif>)
 }

@@ -19,7 +19,7 @@ abstract class GifDailyDatabase: RoomDatabase() {
      * the database class must define an abstract method
      * that has zero arguments and returns an instance of the DAO class.
      */
-    abstract fun gifDao(): GifDao
+    abstract fun getGifDao(): GifDao
 
     companion object {
         const val DB_NAME = "gif_daily_database"
