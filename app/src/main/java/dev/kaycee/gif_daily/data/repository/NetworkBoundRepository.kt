@@ -1,8 +1,11 @@
 package dev.kaycee.gif_daily.data.repository
 
+import android.util.Log
 import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 
 /**
@@ -14,29 +17,28 @@ abstract class NetworkBoundRepository<RESULT, REQUEST> {
     fun asFlow() = flow<Resource<RESULT>> {
 
         //Emit database content first
-        emit(Resource.Success(fetchLocalDb().first()))
+//        emit(Resource.Success(fetchLocalDb().first()))
 
         //Fetch latest gif from remote
         val apiResponse = fetchFromRemote()
-
+        Log.d("congnm",apiResponse.body().toString())
         //Parse body
         val remoteGif = apiResponse.body()
-
         //Check for response validation
         if (apiResponse.isSuccessful && remoteGif != null) {
             //Save gif into the db
-            saveRemoteData(remoteGif)
+//            saveRemoteData(remoteGif)
         } else {
             //Emit error when something went wrong
             emit(Resource.Error(apiResponse.message()))
         }
 
         //Get gif from persistence storage and emit
-        emitAll(
-            fetchLocalDb().map {
-                Resource.Success<RESULT>(it)
-            }
-        )
+//        emitAll(
+//            fetchLocalDb().map {
+//                Resource.Success<RESULT>(it)
+//            }
+//        )
     }.catch { e ->
         e.printStackTrace()
         emit(Resource.Error("Network error!"))
