@@ -3,19 +3,23 @@ package dev.kaycee.gif_daily.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.squareup.moshi.Json
 
 @Entity(tableName = TrendingGif.TABLE_NAME )
 data class TrendingGif(
     @PrimaryKey
     val id: Int,
 
-    @Json(name = "id")
     @ColumnInfo(name = "stringId")
     val stringID: String?,
 
-    @Json(name = "images")
-    val images: List<GifImage>
+    @ColumnInfo(name = "url")
+    val url: String?,
+
+    @ColumnInfo(name = "width")
+    val width: Int,
+
+    @ColumnInfo(name = "height")
+    val height: Int
 ) {
     companion object {
         const val TABLE_NAME = "gif_database"

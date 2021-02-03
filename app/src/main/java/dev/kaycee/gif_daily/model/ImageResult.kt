@@ -7,8 +7,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @JsonClass(generateAdapter = true)
-data class Pagination(
-    @Json(name = "total_count")val totalCount: Int,
-    @Json(name = "count")val count: Int,
-    @Json(name = "offset")val offset: Int
+data class ImageResult(
+    @Json(name = "original")
+    val original: OriginalGifImage
 ): Parcelable
