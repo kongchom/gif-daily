@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 
 class TrendingGifViewModel @ViewModelInject constructor(
     private val repo: DefaultGifRepository
-): ViewModel() {
+) : ViewModel() {
 
     private val _trendingGifLiveData = MutableLiveData<State<List<TrendingGif>>>()
 
@@ -30,5 +30,4 @@ class TrendingGifViewModel @ViewModelInject constructor(
                 .collect { state -> _trendingGifLiveData.value = state }
         }
     }
-
 }

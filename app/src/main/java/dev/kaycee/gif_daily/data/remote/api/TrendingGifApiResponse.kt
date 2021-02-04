@@ -14,4 +14,4 @@ data class TrendingGifApiResponse(
     @Json(name = "data")val data: List<Data>,
     @Json(name = "pagination") val pagination: Pagination,
     @Json(name = "meta")val meta: Meta
-): Parcelable
+) : Parcelable

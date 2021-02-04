@@ -10,4 +10,4 @@ import kotlinx.android.parcel.Parcelize
 data class ImageResult(
     @Json(name = "original")
     val original: OriginalGifImage
-): Parcelable
+) : Parcelable

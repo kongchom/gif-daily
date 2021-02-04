@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<VB: ViewBinding, VM: ViewModel>: Fragment() {
+abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     protected lateinit var binding: VB
     protected val viewModel: VM by lazy { ViewModelProvider(this).get(getViewModelClass()) }

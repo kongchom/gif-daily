@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = TrendingGif.TABLE_NAME )
+@Entity(tableName = TrendingGif.TABLE_NAME)
 data class TrendingGif(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,

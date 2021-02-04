@@ -11,4 +11,4 @@ data class OriginalGifImage(
     @Json(name = "width") val width: Int,
     @Json(name = "height")val height: Int,
     @Json(name = "url") val url: String
-): Parcelable
+) : Parcelable

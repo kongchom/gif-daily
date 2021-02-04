@@ -12,4 +12,4 @@ data class Data(
     val id: String,
     @Json(name = "images")
     val image: ImageResult
-): Parcelable
+) : Parcelable

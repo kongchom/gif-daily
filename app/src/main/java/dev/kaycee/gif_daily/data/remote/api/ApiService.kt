@@ -17,4 +17,3 @@ interface ApiService {
         const val API_KEY = "0bAfgbeULLvtxs1olpKPZG9sWYKg1aMT"
     }
 }
-

@@ -12,7 +12,7 @@ import dev.kaycee.gif_daily.model.TrendingGif
     version = DatabaseMigration.DB_VERSION
 )
 
-abstract class GifDailyDatabase: RoomDatabase() {
+abstract class GifDailyDatabase : RoomDatabase() {
 
     /**
      *For each DAO class that is associated with the database,
@@ -44,7 +44,5 @@ abstract class GifDailyDatabase: RoomDatabase() {
                 return instance
             }
         }
-
     }
-
 }

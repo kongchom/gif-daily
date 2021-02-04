@@ -10,7 +10,7 @@ import dev.kaycee.gif_daily.model.State
 import dev.kaycee.gif_daily.ui.BaseFragment
 
 @AndroidEntryPoint
-class TrendingFragment: BaseFragment<FragmentTrendingBinding, TrendingGifViewModel>() {
+class TrendingFragment : BaseFragment<FragmentTrendingBinding, TrendingGifViewModel>() {
 
     override fun getViewBinding(
         inflater: LayoutInflater,
@@ -23,15 +23,15 @@ class TrendingFragment: BaseFragment<FragmentTrendingBinding, TrendingGifViewMod
         viewModel.trendingGifLiveData.observe(viewLifecycleOwner, { state ->
             when (state) {
                 is State.Loading -> {
-                    Log.d("congnm","state loading")
+                    Log.d("congnm", "state loading")
                 }
 
                 is State.Success -> {
                 }
-                is State.Error -> { Log.d("congnm", state.message?: "Cannot get state error message")}
+                is State.Error -> {
+                    Log.d("congnm", state.message ?: "Cannot get state error message")
+                }
             }
         })
-
     }
-
 }

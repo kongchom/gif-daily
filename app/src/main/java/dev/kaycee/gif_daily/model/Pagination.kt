@@ -11,4 +11,4 @@ data class Pagination(
     @Json(name = "total_count")val totalCount: Int,
     @Json(name = "count")val count: Int,
     @Json(name = "offset")val offset: Int
-): Parcelable
+) : Parcelable

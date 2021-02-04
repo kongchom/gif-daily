@@ -9,16 +9,16 @@ import retrofit2.Response
 import javax.inject.Inject
 
 interface GifRepository {
-     fun getAllTrendingGif(apiKey: String): Flow<Resource<List<TrendingGif>>>
+    fun getAllTrendingGif(apiKey: String): Flow<Resource<List<TrendingGif>>>
 }
 
 class DefaultGifRepository @Inject constructor(
     private val gifDao: GifDao,
     private val apiService: ApiService
-): GifRepository {
+) : GifRepository {
 
     override fun getAllTrendingGif(apiKey: String): Flow<Resource<List<TrendingGif>>> {
-        return object: NetworkBoundResource<List<TrendingGif>, TrendingGifApiResponse>() {
+        return object : NetworkBoundResource<List<TrendingGif>, TrendingGifApiResponse>() {
 
             override suspend fun saveRemoteData(response: TrendingGifApiResponse) {
                 val apiData = response.data
@@ -47,7 +47,6 @@ class DefaultGifRepository @Inject constructor(
             override suspend fun fetchFromRemote(): Response<TrendingGifApiResponse> {
                 return apiService.getTrendingGif(apiKey)
             }
-
         }.asFlow()
     }
 }

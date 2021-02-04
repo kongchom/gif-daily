@@ -14,24 +14,24 @@ abstract class NetworkBoundResource<RESULT, REQUEST> {
 
     fun asFlow() = flow<Resource<RESULT>> {
 
-        //Emit database content first
+        // Emit database content first
         emit(Resource.Success(fetchLocalDb().first()))
 
-        //Fetch latest gif from remote
+        // Fetch latest gif from remote
         val apiResponse = fetchFromRemote()
-        Log.d("congnm",apiResponse.body().toString())
-        //Parse body
+        Log.d("congnm", apiResponse.body().toString())
+        // Parse body
         val remoteGif = apiResponse.body()
-        //Check for response validation
+        // Check for response validation
         if (apiResponse.isSuccessful && remoteGif != null) {
-            //Save gif into the db
+            // Save gif into the db
             saveRemoteData(remoteGif)
         } else {
-            //Emit error when something went wrong
+            // Emit error when something went wrong
             emit(Resource.Error(apiResponse.message()))
         }
 
-        //Get gif from persistence storage and emit
+        // Get gif from persistence storage and emit
         emitAll(
             fetchLocalDb().map {
                 Resource.Success(it)
@@ -64,5 +64,4 @@ abstract class NetworkBoundResource<RESULT, REQUEST> {
      * Fetch data from remote
      */
     protected abstract suspend fun fetchFromRemote(): Response<REQUEST>
-
 }
