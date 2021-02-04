@@ -14,5 +14,5 @@ interface GifDao {
     fun getAllTrendingGif(): Flow<List<TrendingGif>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addGifList(trendingGif: List<TrendingGif>)
+    suspend fun addGifList(trendingGif: List<TrendingGif>)
 }

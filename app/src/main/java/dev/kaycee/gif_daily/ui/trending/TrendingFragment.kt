@@ -20,14 +20,15 @@ class TrendingFragment: BaseFragment<FragmentTrendingBinding, TrendingGifViewMod
     override fun getViewModelClass(): Class<TrendingGifViewModel> = TrendingGifViewModel::class.java
 
     override fun onCreateView(instance: Bundle?) {
-        viewModel.getTrendingGif()
         viewModel.trendingGifLiveData.observe(viewLifecycleOwner, { state ->
             when (state) {
                 is State.Loading -> {
+                    Log.d("congnm","state loading")
                 }
 
-                is State.Success -> { }
-                is State.Error -> { Log.d("congnm", state.message?: "Null message")}
+                is State.Success -> {
+                }
+                is State.Error -> { Log.d("congnm", state.message?: "Cannot get state error message")}
             }
         })
 
