@@ -14,9 +14,6 @@ fun EditText.textChanges(): Flow<CharSequence?> {
         val listener = doOnTextChanged { text, _, _, _ ->
             offer(text)
         }
-        awaitClose {  removeTextChangedListener(listener) }
+        awaitClose { removeTextChangedListener(listener) }
     }.onStart { emit(text) }
 }
-
-
-

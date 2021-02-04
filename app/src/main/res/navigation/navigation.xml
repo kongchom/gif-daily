@@ -10,8 +10,19 @@
         android:name="dev.kaycee.gif_daily.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+
     <fragment
         android:id="@+id/logInFragment"
         android:name="dev.kaycee.gif_daily.ui.login.LogInFragment"
-        android:label="LogInFragment" />
+        android:label="LogInFragment" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/trendingFragment"
+        android:name="dev.kaycee.gif_daily.ui.trending.TrendingFragment"
+        android:label="TrendingFragment" />
+
+    <action android:id="@+id/showTrending"
+        app:destination="@+id/trendingFragment"/>
+
 </navigation>

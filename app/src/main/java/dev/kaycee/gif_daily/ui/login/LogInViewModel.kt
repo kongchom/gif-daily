@@ -6,9 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class LogInViewModel @ViewModelInject constructor(
-
-) : ViewModel() {
+class LogInViewModel @ViewModelInject constructor() : ViewModel() {
 
     var isValidUserName: Boolean = false
     var isValidPassword: Boolean = false
@@ -31,8 +29,8 @@ class LogInViewModel @ViewModelInject constructor(
     get() = _isLogIn
 
     fun validateUsername(username: String) {
-        isValidUserName = isLengthValidCharactersValid(username)
-                && isSatisfyOtherRequirements(username)
+        isValidUserName = isLengthValidCharactersValid(username) &&
+                isSatisfyOtherRequirements(username)
         _userName.postValue(username)
     }
 

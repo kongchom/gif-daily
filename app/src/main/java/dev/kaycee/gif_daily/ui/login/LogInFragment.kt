@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
-class LogInFragment: BaseFragment<FragmentLogInBinding, LogInViewModel>() {
+class LogInFragment : BaseFragment<FragmentLogInBinding, LogInViewModel>() {
 
     override fun getViewBinding(
         inflater: LayoutInflater,
@@ -67,7 +67,6 @@ class LogInFragment: BaseFragment<FragmentLogInBinding, LogInViewModel>() {
 
     private fun initListeners() {
         binding.btnSignUp.setOnClickListener {
-
         }
         binding.btnOptionLogIn.setOnClickListener {
             viewModel.enableLogInMode(true)
@@ -131,5 +130,4 @@ class LogInFragment: BaseFragment<FragmentLogInBinding, LogInViewModel>() {
         binding.btnOptionSignUp.alpha = ENABLE_ALPHA
         binding.btnSignUp.text = getString(R.string.sign_up)
     }
-
 }
